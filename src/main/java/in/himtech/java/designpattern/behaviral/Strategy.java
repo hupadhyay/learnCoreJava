@@ -11,7 +11,10 @@ package in.himtech.java.designpattern.behaviral;
  *
  */
 public class Strategy {
-
+	public static void main(String[] args) {
+		CalculationWork calWork = new CalculationWork();
+		calWork.doInvestmentCalculation();
+	}
 }
 
 interface MathematicalStrategy{
@@ -48,6 +51,20 @@ class GeometricalStrategy implements MathematicalStrategy{
 	
 }
 
-class CalculationSyndrome{
+class CalculationWork{
+	
+	private MathematicalStrategy mathStrategy;
+	
+	
+	public void doInvestmentCalculation() {
+		mathStrategy = new ArithmeticalStrategy();
+		mathStrategy.executeOperation(4, 9);
+		
+		mathStrategy = new AlgebricalStrategy();
+		mathStrategy.executeOperation(4, 9);
+		
+		mathStrategy = new GeometricalStrategy();
+		mathStrategy.executeOperation(4, 9);
+	}
 	
 }

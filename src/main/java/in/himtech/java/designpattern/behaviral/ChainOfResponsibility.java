@@ -12,4 +12,96 @@ package in.himtech.java.designpattern.behaviral;
  */
 public class ChainOfResponsibility {
 
+	public static void main(String[] args) {
+		String financialChanges = "Financial Changes";
+		FinancialUpdate financialUpdate = new SavingAccountUpdate();
+		
+		while(financialUpdate != null) {
+			financialChanges = financialUpdate.updateAccount(financialChanges);
+			financialUpdate = financialUpdate.next();
+		}
+		
+		System.out.println("Update financial report is : " + financialChanges);
+	}
+}
+
+interface FinancialUpdate {
+
+	String updateAccount(String updates);
+
+	FinancialUpdate next();
+}
+
+class SavingAccountUpdate implements FinancialUpdate {
+
+	private FinancialUpdate financialUpdate;
+
+	public SavingAccountUpdate() {
+		financialUpdate = new CurrentAccountUpdate();
+	}
+
+	@Override
+	public String updateAccount(String updates) {
+		return updates + ", Saving Account update";
+	}
+
+	@Override
+	public FinancialUpdate next() {
+		return financialUpdate;
+	}
+}
+
+class CurrentAccountUpdate implements FinancialUpdate {
+
+	private FinancialUpdate financialUpdate;
+
+	public CurrentAccountUpdate() {
+		financialUpdate = new FixedDepositeUpdate();
+	}
+
+	@Override
+	public String updateAccount(String updates) {
+		return updates + ", Current Account update";
+	}
+
+	@Override
+	public FinancialUpdate next() {
+		return financialUpdate;
+	}
+}
+
+class FixedDepositeUpdate implements FinancialUpdate {
+
+	private FinancialUpdate financialUpdate;
+
+	public FixedDepositeUpdate() {
+		financialUpdate = new InvestmentAccountUpdate();
+	}
+
+	@Override
+	public String updateAccount(String updates) {
+		return updates + ", Fixed Deposite update";
+	}
+
+	@Override
+	public FinancialUpdate next() {
+		return financialUpdate;
+	}
+}
+
+class InvestmentAccountUpdate implements FinancialUpdate {
+
+	public InvestmentAccountUpdate() {
+
+	}
+
+	@Override
+	public String updateAccount(String updates) {
+		return updates + ", Investment Account update";
+	}
+
+	@Override
+	public FinancialUpdate next() {
+		return null;
+	}
 }
