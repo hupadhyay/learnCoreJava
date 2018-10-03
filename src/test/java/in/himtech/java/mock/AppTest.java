@@ -1,4 +1,4 @@
-package in.himtech.java;
+package in.himtech.java.mock;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
