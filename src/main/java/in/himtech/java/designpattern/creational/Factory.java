@@ -2,7 +2,7 @@ package in.himtech.java.designpattern.creational;
 
 /**
  * The factory design pattern is used to create various objects based on client input 
- * without exposing theÂ creationÂ logic to the client. 
+ * without exposing the creational logic to the client. 
  * This design pattern is also helped to track/logged/managed the created object.
  * @author Himanshu
  *

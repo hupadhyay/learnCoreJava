@@ -1,6 +1,6 @@
 package in.himtech.java.designpattern.behaviral;
 /**
- * 
+ * Encapsulation of Command into an object is called command pattern.
  * @author Himanshu
  *
  */

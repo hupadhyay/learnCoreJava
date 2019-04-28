@@ -1,0 +1,32 @@
+// Design Pattern (GOF)
+
+There are three type of degin patterns
+--> Creational  : the group of the patterns which tells us "how an object to be created". 
+--> Structural  : the group of the patterns which tells us "how an object is related to another object (i.e.: is-a/has-a relations)
+--> Behavioural : the group of the patterns which tells us "how an object behaves/communicate with other object.
+
+// Creational Design Pattern:
+
+--> Prototype : A fully initialized object which is either copied or cloned from an existing object.
+--> Builder   : Separates out object creation from its representation.
+--> Singleton : Only one instance in an application. In case of cluster one instance per JVM.
+--> Factory	  : Create a family of similar object
+
+// Structural Design Pattern
+
+--> Proxy	   : An object represent another object. Local Proxy, Remote Proxy and Virtual Proxy(RMI, Spring and Hibernate Proxy model and Mocking)
+--> Decorator  : Add additional responsibility to the object dynamically. (java IO)
+--> Facade	   : A single class that represent the entire subsystem. (Event Manager, Booking system)
+--> Adapter	   : Match interfaces of different classes. (Object and Class Adapter) The class Adapter use inheritance while object adapter use composition.
+--> Flyweight  : A find grained instance used for efficient sharing i.e. jdbc connection and connection pool. Flyweight patterns managing object for efficient sharing.
+
+// Behavioural Design Pattern
+
+--> Chain Of Resposibility: A way of passing request between a chain of objects. (servlet filter, loan request processing in bank)
+--> Ierator	   : Sequential access of a list of objects. (next button of remote to change channel)
+--> State	   : Making some change in object will change the state of object. the new state of object depends on current object state and nature of change.
+--> Strategy   : Encapsulate the algorithm inside a class. So that it can be change as the need of application.
+--> Observer   : A way of notifying the change to a number of objects. (JIRA, Github)
+--> Visitor	   : Defining a new object of class without modifying the code of framework.
+--> Template   : Defining a way of processing the request where the actual processing is done by implementing classes.
+--> Command	   : Encapsulation of command into an object.
