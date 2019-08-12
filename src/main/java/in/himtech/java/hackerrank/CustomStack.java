@@ -3,7 +3,7 @@ package in.himtech.java.hackerrank;
 import java.util.Arrays;
 
 /**
- * @ProblemStatement
+ * @ProblemStatement Write a java program to implements stack.
  * 
  */
 public class CustomStack<T> {
